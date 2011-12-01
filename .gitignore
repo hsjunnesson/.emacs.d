@@ -1,0 +1,15 @@
+*.DS_Store
+*~
+
+*.elc
+.ido.last
+
+ac-comphist.dat
+auto-save-list
+backups
+el-get
+elpa
+elpa-to-submit
+places
+swank
+
