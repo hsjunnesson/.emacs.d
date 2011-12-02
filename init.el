@@ -54,9 +54,9 @@
 (require 'hs-color)
 (require 'hs-recentf)
 (require 'hs-ido)
+(require 'hs-custom)
 
 
 ; start server
 (server-start)
 (message "loaded init.el")
-
