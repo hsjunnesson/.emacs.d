@@ -46,7 +46,6 @@
      clojure-mode
      protobuf-mode
      org-mode
-     wanderlust
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
@@ -60,7 +59,6 @@
 (require 'hs-recentf)
 (require 'hs-ido)
 (require 'hs-custom)
-(require 'hs-wanderlust)
 (require 'hs-objc)
 
 
