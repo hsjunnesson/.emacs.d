@@ -1,0 +1,16 @@
+(setq mew-proto "%")
+(setq mew-user "hans.sjunnesson")
+(setq mew-mail-domain "gmail.com")
+
+(setq mew-imap-server "imap.gmail.com")
+(setq mew-imap-user "hans.sjunnesson@gmail.com")
+(setq mew-imap-auth  t)
+(setq mew-imap-ssl t)
+(setq mew-imap-ssl-port "993")
+(setq mew-smtp-auth t)
+(setq mew-smtp-ssl t)
+(setq mew-smtp-ssl-port "465")
+(setq mew-smtp-user "hans.sjunnesson@gmail.com")
+(setq mew-smtp-server "smtp.gmail.com")
+
+(provide 'hs-mew)

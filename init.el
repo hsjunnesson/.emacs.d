@@ -17,8 +17,12 @@
 
 ;; local sources
 (setq el-get-sources
-      )
-
+      '((:name mew
+	       :type git
+	       :url "https://github.com/kazu-yamamoto/Mew.git"
+	       :features mew
+	       :after (lambda() (require 'hs-mew)))
+	))
 
 (setq
   hs:el-get-packages
@@ -60,3 +64,4 @@
 ; start server
 (server-start)
 (message "loaded init.el")
+
