@@ -39,7 +39,13 @@
 (global-set-key (kbd "C-x C-<left>") 'windmove-left)
 
 
+;; Indicate empty lines
 (setq-default indicate-empty-lines 1)
+
+
+;; Line numbering
+(line-number-mode 1)
+(column-number-mode 1)
 
 
 (provide 'hs-generic)
