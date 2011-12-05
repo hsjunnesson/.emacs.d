@@ -58,8 +58,9 @@
 (require 'hs-color)
 (require 'hs-recentf)
 (require 'hs-ido)
-(require 'hs-custom)
 (require 'hs-objc)
+
+(require 'hs-custom)
 
 
 ; start server
