@@ -1,5 +1,11 @@
 (setq custom-file "~/.emacs.d/hs-custom.el")
 
+
+;; Mac keyboard
+(setq mac-option-modifier 'none)
+(setq mac-command-modifier 'meta)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
