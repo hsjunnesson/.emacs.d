@@ -27,6 +27,14 @@
 (defvar wolfram-app-id "2JTYAL-2XAYU3XVE3"
   "The Wolfram Alpha App ID")
 
+(defvar wolfram-alpha-query-history nil
+  "History for `wolfram-alpha' prompt.")
+
+(defcustom wolfram-alpha-buffer-name "*WolframAlpha*"
+  "Name of the WolframAlpha query results buffer."
+  :group 'wolfram-alpha
+  :type 'string)
+
 
 ;;; Code:
 
@@ -41,20 +49,64 @@
 
 (defun wolfram--xml-for-query (query)
   "Returns XML for a query"
-  (let ((result nil))
-    (set-buffer
-     (url-retrieve-synchronously
-      (wolfram--url-for-query query)))
-    (goto-char (point-min))
-    (setq result (xml-parse-fragment))
-    (kill-buffer (current-buffer))
-    result))
+  (let* ((url (wolfram--url-for-query query))
+	 (data (when url (with-current-buffer (url-retrieve-synchronously url)
+			   (buffer-string)))))
+    (if data
+	(with-temp-buffer
+	  (erase-buffer)
+	  (insert data)
+	  (car (xml-parse-region (point-min) (point-max)))))))
 
-(defun wolfram-query (query)
-  "Sends a query to Wolfram Alpha, returns the resulting data."
-  (let* ((xml (cadr (wolfram--xml-for-query query)))
-	 (pods (mapcar 'cadr (xml-get-children xml 'pod))))
-    pods))
+(defun wolfram--pods-for-query (query)
+  "Runs a query, return pods as an alist."
+  (xml-get-children (wolfram--xml-for-query query) 'pod))
+
+(defun wolfram--append-pod (pod)
+  "Appends a pod to the current buffer."
+  (let ((title (xml-get-attribute pod 'title))
+  	(err (equal "true" (xml-get-attribute pod 'error))))
+    ;; First insert pod
+    (insert
+     (when title
+       (format "%s:%s\n"
+	       title
+	       (if err " *error*" ""))))
+    ;; Then subpods
+    (dolist (subpod (xml-get-children pod 'subpod))
+      (let ((plaintext (xml-get-attribute subpod 'plaintext))
+    	    (image (xml-get-attribute subpod 'image)))
+    	(insert plaintext
+    	 ;; (if (and image plaintext)
+    	 ;;     (format "%s" (cdr (assoc 'src image)))
+    	 ;;   (if plaintext
+    	 ;;       (format "%s" plaintext)))
+)
+    	(insert "\n\n")))
+    ))
+
+(defun wolfram--create-pods-buffer (pods)
+  "Creates the buffer to show the pods."
+  (let ((buffer (get-buffer-create wolfram-alpha-buffer-name)))
+    (unless (eq (current-buffer) buffer)
+      (switch-to-buffer-other-window buffer))
+    (goto-char (point-max))
+    (dolist (pod pods)
+      (wolfram--append-pod pod))
+    buffer))
+
+(defun wolfram-alpha (query)
+  "Sends a query to Wolfram Alpha, returns the resulting data as a list of pods."
+  (interactive
+   (list
+    (if (and transient-mark-mode mark-active)
+	(buffer-substring-no-properties
+         (region-beginning) (region-end))
+      (read-string "Query: " nil 'wolfram-alpha-history))))
+  (if (and (stringp query)
+	   (> (length query) 0))
+      (wolfram--create-pods-buffer
+       (wolfram--pods-for-query query))))
 
 (provide 'wolfram)
 ;;; wolfram.el ends here
