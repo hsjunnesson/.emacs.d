@@ -53,8 +53,8 @@
 (defun wolfram-query (query)
   "Sends a query to Wolfram Alpha, returns the resulting data."
   (let* ((xml (cadr (wolfram--xml-for-query query)))
-	 (pods (xml-get-children xml 'pod)))
+	 (pods (mapcar 'cadr (xml-get-children xml 'pod))))
     pods))
 
-(provide 'wolfram))
+(provide 'wolfram)
 ;;; wolfram.el ends here
