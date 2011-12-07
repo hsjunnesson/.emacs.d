@@ -59,6 +59,7 @@
 (require 'hs-recentf)
 (require 'hs-ido)
 (require 'hs-objc)
+(require 'hs-org)
 
 (require 'hs-custom)
 
