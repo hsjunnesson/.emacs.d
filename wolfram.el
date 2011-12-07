@@ -30,10 +30,18 @@
 (defvar wolfram-alpha-query-history nil
   "History for `wolfram-alpha' prompt.")
 
+(defgroup wolfram-alpha nil
+  "Wolfram Alpha customization group")
+
 (defcustom wolfram-alpha-buffer-name "*WolframAlpha*"
-  "Name of the WolframAlpha query results buffer."
+  "The name of the WolframAlpha query results buffer."
   :group 'wolfram-alpha
   :type 'string)
+
+(defcustom wolfram-alpha-prefer-plaintext t
+  "Whether to show plaintext version when there's both a plaintext and an image result."
+  :group 'wolfram-alpha
+  :type 'boolean)
 
 
 ;;; Code:
@@ -69,20 +77,23 @@
     ;; First insert pod
     (insert
      (when title
-       (format "%s:%s\n"
+       (format "* %s%s\n"
 	       title
 	       (if err " *error*" ""))))
     ;; Then subpods
     (dolist (subpod (xml-get-children pod 'subpod))
-      (let ((plaintext (xml-get-attribute subpod 'plaintext))
-    	    (image (xml-get-attribute subpod 'image)))
-    	(insert plaintext
-    	 ;; (if (and image plaintext)
-    	 ;;     (format "%s" (cdr (assoc 'src image)))
-    	 ;;   (if plaintext
-    	 ;;       (format "%s" plaintext)))
-)
-    	(insert "\n\n")))
+      (let ((plaintext (car (xml-get-children subpod 'plaintext)))
+	    (image (car (xml-get-children subpod 'img))))
+    	(insert
+	 (concat
+	  (when plaintext
+	    (format "%s\n"
+		    (car (last plaintext))))
+	  (when image
+	    (format "%s\n"
+		    (xml-get-attribute image 'src)))
+	  "\n"))
+	))
     ))
 
 (defun wolfram--create-pods-buffer (pods)
@@ -90,6 +101,8 @@
   (let ((buffer (get-buffer-create wolfram-alpha-buffer-name)))
     (unless (eq (current-buffer) buffer)
       (switch-to-buffer-other-window buffer))
+    (when (functionp 'org-mode) (org-mode))
+    (when (functionp 'iimage-mode) (iimage-mode))
     (goto-char (point-max))
     (dolist (pod pods)
       (wolfram--append-pod pod))
