@@ -63,6 +63,10 @@
 
 (require 'hs-custom)
 
+;; Wolfram hax
+(add-to-list 'load-path "~/.emacs.d/wolfram.el")
+(require 'wolfram)
+
 
 ; start server
 (server-start)
