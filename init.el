@@ -29,7 +29,6 @@
   (append
    '(el-get
      ruby-mode
-     auto-complete
      yaml-mode
      markdown-mode
      coffee-mode
@@ -60,6 +59,7 @@
 (require 'hs-ido)
 (require 'hs-objc)
 (require 'hs-org)
+(require 'hs-hippie)
 
 (require 'hs-custom)
 

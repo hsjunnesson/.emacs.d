@@ -1,8 +1,9 @@
 (dolist (hook '(scheme-mode-hook
-                 lisp-mode-hook
-                 emacs-lisp-mode-hook
-                 clojure-mode-hook))
+		lisp-mode-hook
+		emacs-lisp-mode-hook
+		clojure-mode-hook))
   (add-hook hook (lambda ()
+		   (eldoc-mode t)
                    (paredit-mode t)
                    (highlight-parentheses-mode t))))
 
