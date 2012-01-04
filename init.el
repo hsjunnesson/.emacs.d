@@ -45,6 +45,7 @@
      clojure-mode
      protobuf-mode
      org-mode
+     calfw
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
@@ -60,6 +61,7 @@
 (require 'hs-objc)
 (require 'hs-org)
 (require 'hs-hippie)
+(require 'hs-calfw)
 
 (require 'hs-custom)
 

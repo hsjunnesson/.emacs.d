@@ -8,7 +8,7 @@
 	indent-tabs-mode 1))
 
 (add-hook 'objc-mode-hook 'objc-indent-settings)
-
+(add-hook 'objc-mode-hook '(lambda () (paredit-mode t)))
 
 (provide 'hs-objc)
 
