@@ -33,13 +33,14 @@
      markdown-mode
      coffee-mode
      undo-tree
-     magit
      color-theme
      color-theme-solarized
      color-theme-tango
      color-theme-tango-2
      color-theme-zenburn
      highlight-parentheses
+     magit
+     mo-git-blame
      paredit
      swank-clojure
      clojure-mode
