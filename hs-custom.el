@@ -18,6 +18,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Dropbox/work.org")))
  '(org-clock-idle-time 10)
+ '(truncate-lines t)
  '(wolfram-alpha-app-id "2JTYAL-2XAYU3XVE3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -65,6 +65,7 @@
 (require 'hs-org)
 (require 'hs-hippie)
 (require 'hs-calfw)
+(require 'hs-ibuffer)
 
 (require 'hs-custom)
 
