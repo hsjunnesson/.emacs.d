@@ -5,7 +5,8 @@
      '(("home"
         ("emacs-config" (or (filename . ".emacs.d")
                             (filename . "emacs-config")))
-        ("org-mode" (mode . org-mode))
+        ("org-mode" (or (mode . org-mode)
+			(name . "Org clock")))
 	("monterosa" (filename . "monterosa"))
 	("msg" (or (mode . rcirc-mode)
 		   (mode . twittering-mode)
