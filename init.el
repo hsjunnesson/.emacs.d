@@ -49,6 +49,7 @@
      calfw
      yasnippet
      twittering-mode
+     git-emacs
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
@@ -66,6 +67,7 @@
 (require 'hs-hippie)
 (require 'hs-calfw)
 (require 'hs-ibuffer)
+(require 'hs-magit)
 
 (require 'hs-custom)
 

@@ -1,4 +1,4 @@
-(color-theme-tango-2)
+(color-theme-zenburn)
 
 (provide 'hs-color)
 

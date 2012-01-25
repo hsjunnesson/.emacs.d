@@ -1,6 +1,15 @@
 ;; iBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(eval-after-load "ibuf-ext"
+  '(define-ibuffer-filter filename
+       "Toggle current view to buffers with file or directory name matching QUALIFIER."
+     (:description "filename"
+		   :reader (read-from-minibuffer "Filter by file/directory name (regexp): "))
+     (ibuffer-awhen (or (buffer-local-value 'buffer-file-name buf)
+			(buffer-local-value 'dired-directory buf))
+		    (string-match qualifier it))))
+
 (setq ibuffer-saved-filter-groups
      '(("home"
         ("emacs-config" (or (filename . ".emacs.d")
@@ -16,9 +25,9 @@
 		    (name . "\*Apropos\*")
 		    (name . "\*info\*")
 		    (mode . "Help")))
-	("dired" (mode . dired-mode))
 	("shells" (or (mode . shell-mode)
 		      (mode . eshell-mode)))
+	("workspace" (filename . "workspace"))
 	("svn" (name . "\*svn"))
 	("git" (or (name . "\*git")
 		   (mode . magit-status-mode)))
