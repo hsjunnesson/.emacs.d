@@ -50,6 +50,7 @@
      yasnippet
      twittering-mode
      git-emacs
+     lua-mode
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
