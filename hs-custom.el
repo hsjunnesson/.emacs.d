@@ -19,13 +19,14 @@
  '(aquamacs-additional-fontsets nil t)
  '(aquamacs-customization-version-id 300 t)
  '(aquamacs-tool-bar-user-customization nil t)
- '(cursor-type (quote box))
+ '(cursor-type (quote box) t)
  '(default-frame-alist (quote ((fringe) (right-fringe) (left-fringe . 1) (internal-border-width . 0) (vertical-scroll-bars . right) (cursor-type . box) (menu-bar-lines . 1) (tool-bar-lines . 0) (background-color . "#121212") (background-mode . dark) (border-color . "#888a85") (foreground-color . "#eeeeec") (cursor-color . "#888888") (mouse-color . "#333333"))))
  '(ns-alternate-modifier (quote none))
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
  '(org-agenda-files (quote ("~/Dropbox/work.org")))
  '(org-clock-idle-time 10)
+ '(send-mail-function (quote mailclient-send-it))
  '(truncate-lines t)
  '(visual-line-mode nil t)
  '(wolfram-alpha-app-id "2JTYAL-2XAYU3XVE3"))
@@ -34,7 +35,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(highlight ((t (:background "#333333")))))
+ '(highlight ((t (:background "#333333"))))
+ '(org-hide ((((background light)) (:foreground "dim gray")) (((background dark)) (:foreground "dim gray")))))
 
 (provide 'hs-custom)
 

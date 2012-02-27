@@ -26,13 +26,15 @@
 		    (name . "\*info\*")
 		    (mode . "Help")))
 	("shells" (or (mode . shell-mode)
-		      (mode . eshell-mode)))
+		      (mode . eshell-mode)
+		      (name ' "\*terminal")))
 	("workspace" (filename . "workspace"))
 	("svn" (name . "\*svn"))
 	("git" (or (name . "\*git")
 		   (mode . magit-status-mode)))
 	("clojure" (or (name . "\*slime-repl")
-		       (mode . clojure-mode)))
+		       (mode . clojure-mode)
+		       (name . "\*swank\*")))
 	 )))
 
 

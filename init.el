@@ -50,6 +50,7 @@
      yasnippet
      twittering-mode
      git-emacs
+     multi-term
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
@@ -80,3 +81,4 @@
 (server-start)
 (message "loaded init.el")
 
+(put 'erase-buffer 'disabled nil)
