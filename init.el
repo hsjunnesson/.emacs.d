@@ -51,6 +51,7 @@
      twittering-mode
      git-emacs
      multi-term
+     lua-mode
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
