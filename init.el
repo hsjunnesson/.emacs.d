@@ -17,11 +17,16 @@
 
 ;; local sources
 (setq el-get-sources
-      '((:name mew
+      '(
+	(:name mew
 	       :type git
 	       :url "https://github.com/kazu-yamamoto/Mew.git"
 	       :features mew
 	       :after (lambda() (require 'hs-mew)))
+	(:name restclient
+	       :type git
+	       :features restclient
+	       :url "https://github.com/pashky/restclient.el.git")
 	))
 
 (setq
