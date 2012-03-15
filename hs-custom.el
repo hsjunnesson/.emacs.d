@@ -25,7 +25,7 @@
  '(ns-alternate-modifier (quote none))
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
- '(org-agenda-files (quote ("~/Dropbox/ikano.org" "~/Dropbox/work.org")))
+ '(org-agenda-files (quote ("~/Dropbox/tradera.org_archive" "~/Dropbox/tradera.org" "~/Dropbox/ikano.org" "~/Dropbox/work.org")))
  '(org-clock-idle-time 10)
  '(send-mail-function (quote mailclient-send-it))
  '(truncate-lines t)
