@@ -5,6 +5,10 @@
              (((background dark)) (:foreground "dim gray")))))
 
 
+(add-hook 'org-mode-hook
+	  '(lambda ()
+	     (auto-fill-mode)))
+
 (set-variable 'org-export-html-style-include-default nil)
 
 (set-variable 'org-export-html-style

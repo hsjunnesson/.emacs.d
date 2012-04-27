@@ -75,6 +75,7 @@
 (require 'hs-calfw)
 (require 'hs-ibuffer)
 (require 'hs-magit)
+(require 'hs-c)
 
 (require 'hs-custom)
 

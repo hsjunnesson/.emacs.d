@@ -21,6 +21,7 @@
  '(aquamacs-tool-bar-user-customization nil t)
  '(cursor-type (quote box) t)
  '(default-frame-alist (quote ((fringe) (right-fringe) (left-fringe . 1) (internal-border-width . 0) (vertical-scroll-bars . right) (cursor-type . box) (menu-bar-lines . 1) (tool-bar-lines . 0) (background-color . "#121212") (background-mode . dark) (border-color . "#888a85") (foreground-color . "#eeeeec") (cursor-color . "#888888") (mouse-color . "#333333"))))
+ '(lua-default-application "/usr/local/bin/lua")
  '(markdown-command "/usr/local/bin/markdown")
  '(ns-alternate-modifier (quote none))
  '(ns-tool-bar-display-mode (quote both) t)
