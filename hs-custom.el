@@ -37,6 +37,7 @@
  '(org-clock-idle-time 10)
  '(org-deadline-warning-days 14)
  '(org-default-notes-file "~/Dropbox/notes.org")
+ '(org-export-htmlize-output-type (quote css))
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-remember-store-without-prompt t)
  '(org-remember-templates (quote ((116 "* TODO %?
