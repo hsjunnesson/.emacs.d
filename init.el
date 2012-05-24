@@ -23,6 +23,11 @@
 	       :url "https://github.com/kazu-yamamoto/Mew.git"
 	       :features mew
 	       :after (lambda() (require 'hs-mew)))
+	(:name framemove
+	       :type http
+	       :features framemove
+	       :url "http://www.emacswiki.org/emacs/download/framemove.el"
+	       :after (lambda() (require 'hs-framemove)))
 	(:name restclient
 	       :type git
 	       :features restclient
