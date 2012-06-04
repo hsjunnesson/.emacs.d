@@ -16,6 +16,44 @@
 
 (set-variable 'org-export-with-section-numbers nil)
 
+
+;; Babel
+
+(add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
+
+; Make babel results blocks lowercase
+(setq org-babel-results-keyword "results")
+
+(defun bh/display-inline-images ()
+  (condition-case nil
+      (org-display-inline-images)
+    (error nil)))
+
+(org-babel-do-load-languages
+ (quote org-babel-load-languages)
+ (quote ((emacs-lisp . t)
+         (dot . t)
+         (ditaa . t)
+         (R . t)
+         (python . t)
+         (ruby . t)
+         (gnuplot . t)
+         (clojure . t)
+         (sh . t)
+         (ledger . t)
+         (org . t)
+         (plantuml . t)
+         (latex . t))))
+
+; Do not prompt to confirm evaluation
+; This may be dangerous - make sure you understand the consequences
+; of setting this -- see the docstring for details
+(setq org-confirm-babel-evaluate nil)
+
+; Use fundamental mode when editing plantuml blocks with C-c '
+(add-to-list 'org-src-lang-modes (quote ("plantuml" . fundamental)))
+
+
 (eval-after-load "org"
   '(progn
      (define-prefix-command 'org-todo-state-map)
@@ -43,7 +81,10 @@
 (define-key global-map [(control meta ?r)] 'remember)
 
 (custom-set-variables
- '(org-default-notes-file "~/Dropbox/notes.org")
+ '(org-directory "~/Dropbox/org")
+ '(org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
+ '(org-mobile-directory "~/Dropbox/MobileOrg")
+ '(org-default-notes-file "~/Dropbox/org/notes.org")
  '(org-agenda-ndays 7)
  '(org-deadline-warning-days 14)
  '(org-agenda-show-all-dates t)
@@ -71,8 +112,8 @@
          (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
  '(org-remember-store-without-prompt t)
  '(org-remember-templates
-   (quote ((116 "* TODO %?\n  %u" "~/Dropbox/todo.org" "Tasks")
-       (110 "* %u %?" "~/Dropbox/notes.org" "Notes"))))
+   (quote ((116 "* TODO %?\n  %u" "~/Dropbox/org/todo.org" "Tasks")
+       (110 "* %u %?" "~/Dropbox/org/notes.org" "Notes"))))
  '(remember-annotation-functions (quote (org-remember-annotation)))
  '(remember-handler-functions (quote (org-remember-handler))))
 
