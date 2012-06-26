@@ -69,6 +69,9 @@
 (el-get 'sync hs:el-get-packages)
 
 
+;; PATH
+(setenv "PATH" "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin")
+
 (require 'hs-mac)
 (require 'hs-lisp)
 (require 'hs-color)
