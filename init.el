@@ -91,6 +91,9 @@
 (add-to-list 'load-path "~/.emacs.d/wolfram.el")
 (require 'wolfram)
 
+;; Add thrift.el
+(require 'thrift-mode)
+
 
 ; start server
 (server-start)
