@@ -29,7 +29,7 @@
  '(ns-tool-bar-size-mode (quote regular) t)
  '(org-agenda-custom-commands (quote (("d" todo "DELEGATED" nil) ("c" todo "DONE|DEFERRED|CANCELLED" nil) ("w" todo "WAITING" nil) ("W" agenda "" ((org-agenda-ndays 21))) ("A" agenda "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote notregexp) "\\=.*\\[#A\\]"))) (org-agenda-ndays 1) (org-agenda-overriding-header "Today's Priority #A tasks: "))) ("u" alltodo "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote scheduled) (quote deadline) (quote regexp) "
 ]+>"))) (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
- '(org-agenda-files (quote ("~/Dropbox/org/lararnas.org" "~/Dropbox/org/pwc.org" "~/Dropbox/org/comviq.org" "~/Dropbox/org/pickmonks.org" "~/Dropbox/org/todo.org_archive" "~/Dropbox/org/todo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/ikano.org" "~/Dropbox/org/work.org" "~/Dropbox/org/volvo.org" "~/Dropbox/org/tradera.org_archive" "~/Dropbox/org/work.org_archive" "~/Dropbox/org/foretagarna.org")))
+ '(org-agenda-files (quote ("~/Dropbox/org/ving.org" "~/Dropbox/org/lararnas.org" "~/Dropbox/org/pwc.org" "~/Dropbox/org/comviq.org" "~/Dropbox/org/pickmonks.org" "~/Dropbox/org/todo.org_archive" "~/Dropbox/org/todo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/ikano.org" "~/Dropbox/org/work.org" "~/Dropbox/org/volvo.org" "~/Dropbox/org/tradera.org_archive" "~/Dropbox/org/work.org_archive" "~/Dropbox/org/foretagarna.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)
