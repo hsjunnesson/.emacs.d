@@ -32,6 +32,10 @@
 	       :type git
 	       :features restclient
 	       :url "https://github.com/pashky/restclient.el.git")
+	(:name json-mode
+	       :type git
+	       :features json-mode
+	       :url "https://github.com/joshwnj/json-mode")
 	))
 
 (setq
