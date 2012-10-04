@@ -1,4 +1,4 @@
-(color-theme-zenburn)
+(color-theme-solarized-dark)
 
 (provide 'hs-color)
 
