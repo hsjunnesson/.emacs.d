@@ -63,9 +63,9 @@ h1 * {
   border: 0;
 }
 h2 {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 14px;
-  border-bottom: 1px solid #aaaaaa;
+x  border-bottom: 1px solid #aaaaaa;
   margin: 14px 0px 12px;
   padding-top: 12px;
   padding-bottom: 2px;
@@ -75,7 +75,7 @@ h2 * {
   border: 0;
 }
 h3 {
-  font-size: 16px;
+  font-size: 12px;
   line-height: inherit;
   margin: 22px 0px 0px 0px;
 }
@@ -102,6 +102,16 @@ p, ol, ul, dl, table, blockquote {
 blockquote {
   font-style: italic;
   padding: 0 44px;
+}
+blockquote:before {
+ content: "“";
+ position: absolute;
+ margin-left: -0.6em;
+ margin-top: 0.3em;
+ font-size: 6em;
+ font-weigth: bold;
+ opacity: 0.15;
+ width: 100%;
 }
 ol, ul { margin-left: 1em; }
 sub {
