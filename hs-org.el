@@ -80,6 +80,8 @@
 
 (define-key global-map [(control meta ?r)] 'remember)
 
+(require 'org-collector)
+
 (custom-set-variables
  '(org-directory "~/Dropbox/org")
  '(org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")

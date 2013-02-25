@@ -153,13 +153,13 @@ dt {
 }
 table {
   border: none;
-  border: 1pt solid #ccccbb;
-  background-color: #ddddcc;
+  border: 1pt solid #ccc;
+  background-color: #ddd;
 }
 tbody {
-  border-top: 3px solid #ccccbb;
-  border-right: 1px solid #ccccbb;
-  border-left: 1px solid #ccccbb;
+  border-top: 3px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 th {
   font-family: Helvetica Neue, Gill Sans, sans-serif;
@@ -169,11 +169,11 @@ th {
   padding-right: 0.5em;
 }
 td {
-  border-right: 1px dashed #ccccbb;
+  border-right: 1px dashed #ccc;
   padding: 0.5em;
 }
-tr { border-bottom: 1px solid #ddddcc; }
-tbody tr:hover { background-color: #e5e5d5; }
+tr { border-bottom: 1px solid #ccc; }
+tbody tr:hover { background-color: #eee; }
 .org-anything-bookmarks-su { color: #ff0000; }
 .org-anything-dir-heading {
   color: #0000ff;

@@ -22,12 +22,12 @@
 	       :type git
 	       :url "https://github.com/kazu-yamamoto/Mew.git"
 	       :features mew
-	       :after (lambda() (require 'hs-mew)))
+	       :after (progn (require 'hs-mew)))
 	(:name framemove
 	       :type http
 	       :features framemove
 	       :url "http://www.emacswiki.org/emacs/download/framemove.el"
-	       :after (lambda() (require 'hs-framemove)))
+	       :after (progn (require 'hs-framemove)))
 	(:name restclient
 	       :type git
 	       :features restclient
@@ -53,6 +53,7 @@
      color-theme-tango-2
      color-theme-zenburn
      highlight-parentheses
+     highlight-indentation
      magit
      mo-git-blame
      paredit

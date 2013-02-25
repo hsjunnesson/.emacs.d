@@ -48,5 +48,17 @@
 (column-number-mode 1)
 
 
+;; Folding
+
+(defun aj-toggle-fold ()
+  "Toggle fold all lines larger than indentation on current line"
+  (interactive)
+  (set-selective-display
+   (if selective-display nil
+     (or (save-excursion
+           (back-to-indentation) (+ 1 (current-column))) 1))))
+(global-set-key [(M C i)] 'aj-toggle-fold)
+
+
 (provide 'hs-generic)
 
