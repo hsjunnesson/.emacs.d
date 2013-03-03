@@ -15,6 +15,10 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require 'el-get)
 
+;; melpa
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 ;; local sources
 (setq el-get-sources
       '(
@@ -36,6 +40,10 @@
 	       :type git
 	       :features json-mode
 	       :url "https://github.com/joshwnj/json-mode")
+	(:name scala-mode2
+	       :type git
+	       :features scala-mode2
+	       :url "https://github.com/hvesalai/scala-mode2")
 	))
 
 (setq
@@ -52,6 +60,7 @@
      color-theme-tango
      color-theme-tango-2
      color-theme-zenburn
+     zenburn-theme
      highlight-parentheses
      highlight-indentation
      magit
@@ -89,6 +98,7 @@
 (require 'hs-ibuffer)
 (require 'hs-magit)
 (require 'hs-c)
+(require 'hs-scala)
 
 (require 'hs-custom)
 
