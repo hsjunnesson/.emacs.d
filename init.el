@@ -55,11 +55,6 @@
      markdown-mode
      coffee-mode
      undo-tree
-     color-theme
-     color-theme-solarized
-     color-theme-tango
-     color-theme-tango-2
-     color-theme-zenburn
      zenburn-theme
      highlight-parentheses
      highlight-indentation
@@ -76,6 +71,7 @@
      git-emacs
      multi-term
      lua-mode
+     nrepl
      )
    (mapcar 'el-get-source-name el-get-sources)))
 
