@@ -22,7 +22,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor-type (quote box) t)
- '(custom-safe-themes (quote ("d6a00ef5e53adf9b6fe417d2b4404895f26210c52bb8716971be106550cea257" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(custom-safe-themes (quote ("3c221cf1a0a4172917772c71da5c4d5e1d4f98c4" "d6a00ef5e53adf9b6fe417d2b4404895f26210c52bb8716971be106550cea257" "71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(default-frame-alist (quote ((fringe) (right-fringe) (left-fringe . 1) (internal-border-width . 0) (vertical-scroll-bars . right) (cursor-type . box) (menu-bar-lines . 1) (tool-bar-lines . 0) (background-color . "#121212") (background-mode . dark) (border-color . "#888a85") (foreground-color . "#eeeeec") (cursor-color . "#888888") (mouse-color . "#333333"))))
  '(ispell-program-name "/usr/local/bin/aspell")
  '(lua-default-application "/usr/local/bin/lua")
@@ -32,7 +32,7 @@
  '(ns-tool-bar-size-mode (quote regular) t)
  '(org-agenda-custom-commands (quote (("d" todo "DELEGATED" nil) ("c" todo "DONE|DEFERRED|CANCELLED" nil) ("w" todo "WAITING" nil) ("W" agenda "" ((org-agenda-ndays 21))) ("A" agenda "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote notregexp) "\\=.*\\[#A\\]"))) (org-agenda-ndays 1) (org-agenda-overriding-header "Today's Priority #A tasks: "))) ("u" alltodo "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote scheduled) (quote deadline) (quote regexp) "
 ]+>"))) (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
- '(org-agenda-files (quote ("~/Dropbox/org/ving.org" "~/Dropbox/org/lararnas.org" "~/Dropbox/org/pwc.org" "~/Dropbox/org/comviq.org" "~/Dropbox/org/pickmonks.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/ikano.org" "~/Dropbox/org/work.org" "~/Dropbox/org/volvo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/work.org" "~/Dropbox/org/foretagarna.org")))
+ '(org-agenda-files (quote ("~/Dropbox/org/ving.org" "~/Dropbox/org/lararnas.org" "~/Dropbox/org/pwc.org" "~/Dropbox/org/comviq.org" "~/Dropbox/org/pickmonks.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/ikano.org" "~/Dropbox/org/volvo.org" "~/Dropbox/org/tradera.org" "~/Dropbox/org/work.org" "~/Dropbox/org/foretagarna.org")))
  '(org-agenda-ndays 7)
  '(org-agenda-show-all-dates t)
  '(org-agenda-skip-deadline-if-done t)

@@ -1,4 +1,5 @@
 ;; Hide leading stars face
+
 (setq org-hide-leading-stars nil)
 (custom-set-faces
  '(org-hide ((((background light)) (:foreground "dim gray"))
@@ -19,60 +20,40 @@
 
 ;; Babel
 
-(add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
+;; (add-hook 'org-babel-after-execute-hook 'bh/display-inline-images 'append)
 
-; Make babel results blocks lowercase
-(setq org-babel-results-keyword "results")
+;; ; Make babel results blocks lowercase
+;; (setq org-babel-results-keyword "results")
 
-(defun bh/display-inline-images ()
-  (condition-case nil
-      (org-display-inline-images)
-    (error nil)))
+;; (defun bh/display-inline-images ()
+;;   (condition-case nil
+;;       (org-display-inline-images)
+;;     (error nil)))
 
-(org-babel-do-load-languages
- (quote org-babel-load-languages)
- (quote ((emacs-lisp . t)
-         (dot . t)
-         (ditaa . t)
-         (R . t)
-         (python . t)
-         (ruby . t)
-         (gnuplot . t)
-         (clojure . t)
-         (sh . t)
-         (ledger . t)
-         (org . t)
-         (plantuml . t)
-         (latex . t))))
+;; (org-babel-do-load-languages
+;;  (quote org-babel-load-languages)
+;;  (quote ((emacs-lisp . t)
+;;          (dot . t)
+;;          (ditaa . t)
+;;          (R . t)
+;;          (python . t)
+;;          (ruby . t)
+;;          (gnuplot . t)
+;;          (clojure . t)
+;;          (sh . t)
+;;          (ledger . t)
+;;          (org . t)
+;;          (plantuml . t)
+;;          (latex . t))))
 
-; Do not prompt to confirm evaluation
-; This may be dangerous - make sure you understand the consequences
-; of setting this -- see the docstring for details
-(setq org-confirm-babel-evaluate nil)
+;; ; Do not prompt to confirm evaluation
+;; ; This may be dangerous - make sure you understand the consequences
+;; ; of setting this -- see the docstring for details
+;; (setq org-confirm-babel-evaluate nil)
 
-; Use fundamental mode when editing plantuml blocks with C-c '
-(add-to-list 'org-src-lang-modes (quote ("plantuml" . fundamental)))
+;; ; Use fundamental mode when editing plantuml blocks with C-c '
+;; (add-to-list 'org-src-lang-modes (quote ("plantuml" . fundamental)))
 
-
-(eval-after-load "org"
-  '(progn
-     (define-prefix-command 'org-todo-state-map)
-
-     (define-key org-mode-map "\C-cx" 'org-todo-state-map)
-
-     (define-key org-todo-state-map "x"
-       #'(lambda nil (interactive) (org-todo "CANCELLED")))
-     (define-key org-todo-state-map "d"
-       #'(lambda nil (interactive) (org-todo "DONE")))
-     (define-key org-todo-state-map "f"
-       #'(lambda nil (interactive) (org-todo "DEFERRED")))
-     (define-key org-todo-state-map "l"
-       #'(lambda nil (interactive) (org-todo "DELEGATED")))
-     (define-key org-todo-state-map "s"
-       #'(lambda nil (interactive) (org-todo "STARTED")))
-     (define-key org-todo-state-map "w"
-       #'(lambda nil (interactive) (org-todo "WAITING")))
-     ))
 
 (require 'remember)
 
@@ -80,7 +61,6 @@
 
 (define-key global-map [(control meta ?r)] 'remember)
 
-(require 'org-collector)
 
 (custom-set-variables
  '(org-directory "~/Dropbox/org")

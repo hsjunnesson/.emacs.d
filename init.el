@@ -44,6 +44,10 @@
 	       :type git
 	       :features scala-mode2
 	       :url "https://github.com/hvesalai/scala-mode2")
+	(:name dash-at-point
+	       :type git
+	       :features dash-at-point
+	       :url "https://github.com/Kapeli/dash-at-point")
 	))
 
 (setq
@@ -65,6 +69,7 @@
      clojure-mode
      protobuf-mode
      org-mode
+     babel
      calfw
      yasnippet
      twittering-mode
