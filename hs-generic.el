@@ -1,7 +1,11 @@
 (set-variable 'inhibit-startup-message t)
+
 (set-variable 'user-mail-address "hans\.sjunnesson@gmail\.com")
 (set-variable 'user-full-name "Hans Sjunnesson")
-(setq visible-bell t)                ;; disable audible bell
+
+;; disable audible bell
+(setq visible-bell t)
+
 
 
 ;; Coding system
@@ -48,16 +52,28 @@
 (column-number-mode 1)
 
 
-;; Folding
+;; PATH
+(defun chomp (str)
+  "Chomp leading and tailing whitespace from STR."
+  (while (string-match "\\`\n+\\|^\\s-+\\|\\s-+$\\|\n+\\'"
+		       str)
+    (setq str (replace-match "" t t str)))
+  str)
 
-(defun aj-toggle-fold ()
-  "Toggle fold all lines larger than indentation on current line"
-  (interactive)
-  (set-selective-display
-   (if selective-display nil
-     (or (save-excursion
-           (back-to-indentation) (+ 1 (current-column))) 1))))
-(global-set-key [(M C i)] 'aj-toggle-fold)
+(let* ((path-prefix "PATH{")
+       (echo-env (concat "$SHELL --login -i -c 'echo " path-prefix "$PATH'"))
+       (shell-output (shell-command-to-string echo-env))
+       (path-from-shell
+	(split-string
+	 (substring shell-output
+		    (+ (length path-prefix)
+		       (string-match path-prefix
+				     shell-output)))
+	 path-separator)))
+
+  (setq path-from-shell (delete-dups (append (mapcar 'chomp path-from-shell) exec-path)))
+  (setenv "PATH" (mapconcat 'identity path-from-shell path-separator))
+  (setq exec-path path-from-shell))
 
 
 (provide 'hs-generic)

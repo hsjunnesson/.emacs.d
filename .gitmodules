@@ -1,3 +1,0 @@
-[submodule "wolfram.el"]
-	path = wolfram.el
-	url = git@github.com:hsjunnesson/wolfram.el.git

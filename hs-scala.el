@@ -1,3 +1,0 @@
-
-(provide 'hs-scala)
-
