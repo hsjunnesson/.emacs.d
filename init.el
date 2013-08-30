@@ -25,6 +25,9 @@
 (require 'hs-ido)
 (require 'hs-ibuffer)
 (require 'hs-custom)
+(require 'hs-recentf)
+
+(require 'thrift-mode)
 
 
 ; start server
