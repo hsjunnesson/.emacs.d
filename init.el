@@ -25,8 +25,9 @@
 (setq
  el-get-sources
  '(el-get
-   clojure-mode
-   nrepl
+    clojure-mode
+    rainbow-delimiters
+    paredit
 ;;   magit
    (:name clojure-test-mode
            :repo ("ELPA" . "http://marmalade-repo.org/packages/")
@@ -45,6 +46,7 @@
 (require 'hs-ibuffer)
 (require 'hs-custom)
 (require 'hs-recentf)
+(require 'hs-clojure)
 ;;(require 'hs-magit)
 
 (require 'thrift-mode)
