@@ -20,6 +20,7 @@
  '(custom-safe-themes (quote ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
  '(org-babel-load-languages (quote ((ruby . t) (ditaa . t) (clojure . t) (emacs-lisp . t))))
  '(org-confirm-babel-evaluate nil)
+ '(org-export-html-style "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///Users/hanssjunnesson/.emacs.d/org-mode.css\" />")
  '(truncate-lines t)
  '(visual-line-mode nil t))
 
