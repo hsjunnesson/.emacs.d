@@ -1,43 +1,34 @@
-;; Load paths
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-
-
-;; melpa
 (require 'package)
 (add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives
-  '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
-;; el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+;; packages
+(defvar my-packages '(
+		      ;; starter-kit
+		      ;; starter-kit-lisp
+		      ;; starter-kit-bindings
+                      auto-complete
+                      rainbow-delimiters
+		      paredit-mode
+                      clojure-mode
+                      cider
+                      magit)
+  "A list of packages to ensure are installed at launch.")
 
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
 
-(setq
- el-get-sources
- '(el-get
-   clojure-mode
-   nrepl
-;;   magit
-   (:name clojure-test-mode
-           :repo ("ELPA" . "http://marmalade-repo.org/packages/")
-           :type elpa)
-   ))
 
-(setq el-get-packages
-      (mapcar 'el-get-source-name el-get-sources))
-
-(el-get 'sync el-get-packages)
-
+;; Load paths
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 ;; Configs
 (require 'hs-generic)
@@ -45,6 +36,7 @@
 (require 'hs-ibuffer)
 (require 'hs-custom)
 (require 'hs-recentf)
+(require 'hs-clojure)
 ;;(require 'hs-magit)
 
 (require 'thrift-mode)
