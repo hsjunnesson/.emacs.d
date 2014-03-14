@@ -16,7 +16,7 @@
 		      ;; starter-kit-bindings
                       auto-complete
                       rainbow-delimiters
-		      paredit-mode
+		      paredit
                       clojure-mode
                       cider
                       magit)
