@@ -11,6 +11,11 @@
 (define-coding-system-alias 'utf8 'utf-8)
 
 
+;; Tabs
+(setq tab-stop-list (number-sequence 2 120 2))
+(define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -18,11 +23,15 @@
  ;; If there is more than one, they won't work right.
  '(cursor-type (quote box) t)
  '(custom-safe-themes (quote ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
- '(org-babel-load-languages (quote ((ruby . t) (ditaa . t) (clojure . t) (emacs-lisp . t))))
+ '(indent-tabs-mode nil)
+ '(org-agenda-files (quote ("~/Dropbox/org/work.org")))
+ '(org-babel-load-languages (quote ((clojure . t) (ditaa . t) (dot . t) (js . t))))
  '(org-confirm-babel-evaluate nil)
+ '(org-ditaa-jar-path "~/Dropbox/org/ditaa0_9.jar")
  '(org-export-html-style "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///Users/hanssjunnesson/.emacs.d/org-mode.css\" />")
  '(truncate-lines t)
- '(visual-line-mode nil t))
+ '(visual-line-mode nil t)
+ '(tab-width 2))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

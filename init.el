@@ -37,7 +37,7 @@
 (require 'hs-custom)
 (require 'hs-recentf)
 (require 'hs-clojure)
-;;(require 'hs-magit)
+(require 'hs-org)
 
 (require 'thrift-mode)
 
