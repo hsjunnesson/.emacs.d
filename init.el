@@ -11,15 +11,19 @@
 
 ;; packages
 (defvar my-packages '(
-		      ;; starter-kit
-		      ;; starter-kit-lisp
-		      ;; starter-kit-bindings
+                      ido
+                      yasnippet
+                      zenburn-theme
+                      org
                       auto-complete
                       rainbow-delimiters
 		      paredit
                       clojure-mode
                       cider
-                      magit)
+                      magit
+                      swift-mode
+                      thrift
+		      protobuf-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -28,7 +32,7 @@
 
 
 ;; Load paths
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/hs"))
 
 ;; Configs
 (require 'hs-generic)
@@ -38,8 +42,6 @@
 (require 'hs-recentf)
 (require 'hs-clojure)
 (require 'hs-org)
-
-(require 'thrift-mode)
 
 
 ; start server
