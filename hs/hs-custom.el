@@ -1,4 +1,4 @@
-(setq custom-file "~/.emacs.d/hs-custom.el")
+(setq custom-file "~/.emacs.d/hs/hs-custom.el")
 
 
 ;; Mac keyboard

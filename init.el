@@ -1,6 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
@@ -17,13 +19,14 @@
                       org
                       auto-complete
                       rainbow-delimiters
-		      paredit
+                      paredit
                       clojure-mode
+                      projectile
                       cider
                       magit
                       swift-mode
                       thrift
-		      protobuf-mode)
+                      protobuf-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -42,6 +45,11 @@
 (require 'hs-recentf)
 (require 'hs-clojure)
 (require 'hs-org)
+
+
+;; Autocomplete
+(require 'auto-complete-config)
+(ac-config-default)
 
 
 ; start server
