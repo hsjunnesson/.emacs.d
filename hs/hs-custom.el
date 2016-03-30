@@ -16,6 +16,13 @@
 (define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
 
 
+;; Bell on El Capitano
+(setq visible-bell nil)
+(setq ring-bell-function (lambda ()
+                           (invert-face 'mode-line)
+                           (run-with-timer 0.1 nil 'invert-face 'mode-line)))
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
