@@ -7,7 +7,6 @@
 (add-hook 'cider-repl-mode-hook 'auto-complete-mode)
 
 (setq nrepl-hide-special-buffers t)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
 (add-to-list 'auto-mode-alist '("\\.cljx\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))

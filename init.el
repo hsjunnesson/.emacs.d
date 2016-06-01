@@ -1,10 +1,10 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org-mode's repository
+
+(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
 
 (package-initialize)
 
@@ -33,6 +33,9 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; Cask
+;;(require 'cask "~/.cask/cask.el")
+;;(cask-initialize)
 
 ;; Load paths
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/hs"))
@@ -45,15 +48,15 @@
 (require 'hs-recentf)
 (require 'hs-clojure)
 (require 'hs-org)
-
+(require 'wolfram)
 
 ;; Autocomplete
 (require 'auto-complete-config)
 (ac-config-default)
 
-
-; start server
+;; start server
 (server-start)
 (message "loaded init.el")
 
 (put 'erase-buffer 'disabled nil)
+

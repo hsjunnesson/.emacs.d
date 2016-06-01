@@ -41,6 +41,12 @@
 (global-set-key (kbd "C-x <C-left>") 'windmove-left)
 (global-set-key (kbd "C-x <C-right>") 'windmove-right)
 
+(global-set-key (kbd "C-x C-o") 'other-window)
+
+
+;; Unbind annoyying key
+;;(global-unset-key (kbd "C-x C-o"))
+
 
 ;; Indicate empty lines
 (setq-default indicate-empty-lines 1)

@@ -22,23 +22,32 @@
                            (invert-face 'mode-line)
                            (run-with-timer 0.1 nil 'invert-face 'mode-line)))
 
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor-type (quote box) t)
- '(custom-safe-themes (quote ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
+ '(cursor-type (quote box))
+ '(custom-safe-themes
+   (quote
+    ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" default)))
  '(indent-tabs-mode nil)
- '(org-agenda-files (quote ("~/Dropbox/org/work.org")))
+ '(lua-default-application "rep.lua")
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/frpip-com.org" "~/Dropbox/org/home.org" "~/Dropbox/org/work.org")))
  '(org-babel-load-languages (quote ((clojure . t) (ditaa . t) (dot . t) (js . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-ditaa-jar-path "~/Dropbox/org/ditaa0_9.jar")
- '(org-export-html-style "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///Users/hanssjunnesson/.emacs.d/org-mode.css\" />")
+ '(org-export-html-style
+   "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///Users/hanssjunnesson/.emacs.d/org-mode.css\" />")
+ '(package-selected-packages
+   (quote
+    (w3m company-sourcekit company cljdoc cider-eval-sexp-fu zenburn-theme yasnippet thrift swift-mode rainbow-delimiters protobuf-mode projectile paredit magit cider auto-complete)))
+ '(tab-width 2)
  '(truncate-lines t)
  '(visual-line-mode nil t)
- '(tab-width 2))
+ '(wolfram-alpha-app-id "2JTYAL-2XAYU3XVE3"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
