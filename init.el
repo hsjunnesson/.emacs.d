@@ -39,6 +39,7 @@
 
 ;; Load paths
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/hs"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/ernie"))
 
 ;; Configs
 (require 'hs-generic)
@@ -47,7 +48,9 @@
 (require 'hs-custom)
 (require 'hs-recentf)
 (require 'hs-clojure)
+(require 'hs-lua)
 (require 'hs-org)
+(require 'hs-javascript)
 (require 'wolfram)
 
 ;; Autocomplete

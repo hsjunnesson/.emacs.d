@@ -65,20 +65,20 @@
     (setq str (replace-match "" t t str)))
   str)
 
-(let* ((path-prefix "PATH{")
-       (echo-env (concat "$SHELL --login -i -c 'echo " path-prefix "$PATH'"))
-       (shell-output (shell-command-to-string echo-env))
-       (path-from-shell
-	(split-string
-	 (substring shell-output
-		    (+ (length path-prefix)
-		       (string-match path-prefix
-				     shell-output)))
-	 path-separator)))
+;; (let* ((path-prefix "PATH{")
+;;        (echo-env (concat "$SHELL --login -i -c 'echo " path-prefix "$PATH'"))
+;;        (shell-output (shell-command-to-string echo-env))
+;;        (path-from-shell
+;; 	(split-string
+;; 	 (substring shell-output
+;; 		    (+ (length path-prefix)
+;; 		       (string-match path-prefix
+;; 				     shell-output)))
+;; 	 path-separator)))
 
-  (setq path-from-shell (delete-dups (append (mapcar 'chomp path-from-shell) exec-path)))
-  (setenv "PATH" (mapconcat 'identity path-from-shell path-separator))
-  (setq exec-path path-from-shell))
+;;   (setq path-from-shell (delete-dups (append (mapcar 'chomp path-from-shell) exec-path)))
+;;   (setenv "PATH" (mapconcat 'identity path-from-shell path-separator))
+;;   (setq exec-path path-from-shell))
 
 
 (provide 'hs-generic)
