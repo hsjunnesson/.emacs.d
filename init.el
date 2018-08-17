@@ -39,7 +39,6 @@
 
 ;; Load paths
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/hs"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/ernie"))
 
 ;; Configs
 (require 'hs-generic)
