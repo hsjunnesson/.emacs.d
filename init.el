@@ -1,5 +1,5 @@
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+;;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org-mode's repository
@@ -26,16 +26,25 @@
                       magit
                       swift-mode
                       thrift
-                      protobuf-mode)
+                      protobuf-mode
+											plantuml-mode
+											lsp-mode
+											yasnippet
+											lsp-treemacs
+											helm-lsp
+											projectile
+											hydra
+											flycheck
+											company
+											avy
+											which-key
+											helm-xref
+											dap-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
-;; Cask
-;;(require 'cask "~/.cask/cask.el")
-;;(cask-initialize)
 
 ;; Load paths
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/hs"))
@@ -50,6 +59,8 @@
 (require 'hs-lua)
 (require 'hs-org)
 (require 'hs-javascript)
+(require 'hs-lsp)
+(require 'hs-cpp)
 (require 'wolfram)
 
 ;; Autocomplete

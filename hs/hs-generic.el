@@ -7,6 +7,42 @@
 (setq visible-bell t)
 
 
+;; Mac
+(setq mac-option-modifier 'none)
+(setq mac-command-modifier 'meta)
+(setq visible-bell nil)
+(setq ring-bell-function (lambda ()
+                           (invert-face 'mode-line)
+                           (run-with-timer 0.1 nil 'invert-face 'mode-line)))
+
+;; Time locale
+(setq system-time-locale "C")
+
+
+;; Tabs
+(setq custom-tab-width 4)
+(defun disable-tabs() (setq indent-tabs-mode nil))
+(defun enable-tabs()
+	(local-set-key (kbd "TAB") `tab-to-tab-stop)
+	(setq indent-tabs-mode t)
+	(setq tab-width custom-tab-width))
+
+(add-hook 'prog-mode-hook 'enable-tabs)
+(add-hook 'lisp-mode-hook 'disable-tabs)
+(add-hook 'emacs-lisp-mode 'disable-tabs)
+(add-hook 'org-mode-hook 'disable-tabs)
+
+(setq-default c-basic-offset custom-tab-width)
+
+(setq electric-indent-inhibit t)
+(setq backward-delete-char-untabify-method 'hungry)
+(setq whitespace-style '(face tabs tab-mark trailing))
+(custom-set-faces
+ '(whitespace-tab ((t (:foreground "#636363")))))
+(setq whitespace-display-mappings
+			'((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
+(global-whitespace-mode) ; Enable whitespace mode everywhere
+
 
 ;; Coding system
 (setq locale-coding-system 'utf-8)
@@ -16,6 +52,8 @@
 (prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 (fset 'yes-or-no-p 'y-or-n-p)
+(define-coding-system-alias 'UTF-8 'utf-8)
+(define-coding-system-alias 'utf8 'utf-8)
 
 
 ;; Mouse-scroll amount
@@ -26,7 +64,8 @@
 (setq frame-title-format '(multiple-frames "%b" "%b"))
 
 
-;; Turn off toolbar
+;; Turn off menubar and toolbar
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 
@@ -44,8 +83,11 @@
 (global-set-key (kbd "C-x C-o") 'other-window)
 
 
-;; Unbind annoyying key
-;;(global-unset-key (kbd "C-x C-o"))
+;; Misc keybinds
+(global-set-key (kbd "M-.") 'find-tag)
+(global-set-key (kbd "C-6") 'imenu)
+(global-set-key (kbd "C-x C-d") 'dired)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 
 ;; Indicate empty lines
