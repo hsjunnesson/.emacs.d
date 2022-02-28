@@ -17,7 +17,7 @@
  '(make-backup-files nil)
  '(mouse-wheel-progressive-speed nil)
  '(org-agenda-files
-	 '("C:/Users/hans.sjunnesson/Dropbox/org/inbox.org" "C:/Users/hans.sjunnesson/Dropbox/org/gtd.org" "C:/Users/hans.sjunnesson/Dropbox/org/tickler.org" "C:/Users/hans.sjunnesson/Dropbox/org/meetings.org"))
+	 '("C:/Users/hans/Dropbox/org/inbox.org" "C:/Users/hans/Dropbox/org/gtd.org" "C:/Users/hans/Dropbox/org/tickler.org" "C:/Users/hans/Dropbox/org/meetings.org"))
  '(org-babel-load-languages '((clojure . t) (ditaa . t) (dot . t) (js . t)))
  '(org-confirm-babel-evaluate nil)
  '(org-ditaa-jar-path "~/Dropbox/org/ditaa0_9.jar")
@@ -50,7 +50,8 @@
  '(rainbow-delimiters-depth-6-face ((t (:foreground "medium spring green"))))
  '(rainbow-delimiters-depth-7-face ((t (:foreground "gold"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "light sky blue"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "medium spring green")))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "medium spring green"))))
+ '(whitespace-tab ((t (:foreground "#636363")))))
 
 
 (provide 'hs-custom)

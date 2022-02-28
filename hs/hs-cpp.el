@@ -70,8 +70,32 @@
         (compilation-ask-about-save nil))
     (call-interactively #'compile )))
 
+(defun disable-auto-complete ()
+  (interactive)
+  (auto-complete-mode -1))
+
+(defconst my-cc-style
+  '("cc-mode"
+    (c-offsets-alist . ((innamespace . [0])))))
+
+(c-add-style "my-cc-mode" my-cc-style)
+
+(setq c-default-style
+	  '((c++-mode . "my-cc-mode")))
+
+(add-hook 'c++-mode-hook #'disable-auto-complete)
 (add-hook 'c++-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'company-mode)
 (add-hook 'c++-mode-hook 'yas-minor-mode)
+
+(with-eval-after-load 'company
+  (define-key company-active-map
+	(kbd "TAB")
+		#'company-complete-selection)
+  (define-key company-active-map
+	(kbd "M-.") #'company-show-location)
+  (define-key company-active-map
+	(kbd "M-/") #'company-complete))
+
 
 (provide 'hs-cpp)

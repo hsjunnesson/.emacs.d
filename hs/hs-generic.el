@@ -84,7 +84,6 @@
 
 
 ;; Misc keybinds
-(global-set-key (kbd "M-.") 'find-tag)
 (global-set-key (kbd "C-6") 'imenu)
 (global-set-key (kbd "C-x C-d") 'dired)
 (global-set-key (kbd "C-c c") 'org-capture)
